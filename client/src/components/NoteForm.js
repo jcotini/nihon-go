@@ -47,6 +47,10 @@ class NoteForm extends Component {
       .then(() => props.history.push('/'));
   }
 
+  handleBack() {
+    this.props.history.push('/');
+  }
+
   render() {
     return <form onSubmit={this.handleSubmit}>
       <div>
@@ -78,6 +82,9 @@ class NoteForm extends Component {
         <input name="description" value={this.state.description} onChange={this.onSpecifiedFieldChange.bind(this, 'description')}></input>
       </div>
       <input type="submit" value="Add" />
+      <button onClick={() => this.handleBack()}>
+            BACK
+          </button>
     </form>
   }
 
